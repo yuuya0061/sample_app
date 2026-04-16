@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   post 'lists' => 'lists#create'
   get 'top'=> 'homes#top'
   get 'lists' => 'lists#index'
-  get 'lists/:id' => 'lists#show'
+  get 'lists/:id' => 'lists#show', as: 'list'
   # Defines the root path route ("/")
   # root "posts#index"
 end
