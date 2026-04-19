@@ -8,14 +8,9 @@ Rails.application.routes.draw do
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
-  get 'lists/new'
-  post 'lists' => 'lists#create'
+ 
   get 'top'=> 'homes#top'
-  get 'lists' => 'lists#index'
-  get 'lists/:id' => 'lists#show', as: 'list'
-  get 'lists/:id/edit' => 'lists#edit', as: 'edit_list'
-  patch 'lists/:id' => 'lists#update', as: 'update_list'
-  delete 'lists/:id' => 'lists#destroy', as: 'destroy_list'
+  resources :lists
   # Defines the root path route ("/")
   # root "posts#index"
 end
